@@ -42,13 +42,10 @@ fn largest_joltage_in_line_p2(line: &str) -> Result<u64, String> {
 
     let mut largests = vec![0; 12];
     for i in (0..n).rev() {
-        for j in (0..largests.len().min(n - i)).rev() {
-            if j == 0 {
-                largests[0] = digs[i].max(largests[0]);
-                continue;
-            }
+        for j in (1..largests.len().min(n - i)).rev() {
             largests[j] = largests[j].max(digs[i] * 10_u64.pow(j as u32) + largests[j - 1]);
         }
+        largests[0] = digs[i].max(largests[0]);
     }
     Ok(largests[largests.len() - 1])
 }
