@@ -4,6 +4,17 @@ Practicing some rust. Didn't bother with the most optimal solutions, just implem
 
 ## Solutions
 
+### Day 10
+
+For part 1, we can represent each button as an integer, where each corresponding light sets the i'th bit of the integer. Then, we just want to
+xor together to buttons to get the desired lights (also can be represented as an integer), and we can find the minimal solution via recursive backtracking.
+For part 2, we can represent the problem as a system of linear equations, where each button is a variable. We want to minimize the sum of all the buttons
+subject to each joltage constraint. To run my code:
+```sh
+brew install cbc
+RUSTFLAGS='-L /opt/homebrew/lib/libCbc.dylib' cargo run
+```
+
 ### Day 9
 
 I am pretty much a computational geometry beginner. Part 1 I brute forced by checking every possible rectangle. Part 2, I used PIP on each of the
