@@ -112,7 +112,7 @@ fn part1(input: &str) -> Result<String, String> {
     Ok(total.to_string())
 }
 
-fn gaussian_elimination(diagram: &PartTwoDiagram) -> Result<f64, String> {
+fn linear_programming(diagram: &PartTwoDiagram) -> Result<f64, String> {
     variables! {
         problem:
     };
@@ -153,8 +153,8 @@ fn part2(input: &str) -> Result<String, String> {
     let problems = parse_input_p2(input).map_err(|e| format!("Error parsing input: {}", e))?;
 
     let mut total: u32 = 0;
-    for mut problem in problems {
-        total += gaussian_elimination(&mut problem)?.floor() as u32;
+    for problem in problems {
+        total += linear_programming(&problem)?.floor() as u32;
     }
     Ok(total.to_string())
 }
