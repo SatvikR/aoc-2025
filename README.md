@@ -6,10 +6,10 @@ Practicing some rust. Didn't bother with the most optimal solutions, just implem
 
 ### Day 9
 
-I am pretty much a computational geometry beginner. Part 1 I brute forced by checking every possible rectangle. Part 2, I used PIP on each the
-corners of each candidate rectangle. If at least one of the corners was not in the polygon, skip that rectangle.
+I am pretty much a computational geometry beginner. Part 1 I brute forced by checking every possible rectangle. Part 2, I used PIP on each of the
+corners of each candidate rectangle. If at least one of the corners is not in the polygon, skip that rectangle.
 Then, check all the polygon edges that intersect the candidate rectangle. Luckily, the problem set does not have
-any rectangles where two edges intersect from either end at the same x coordinate, which my code hinges on. If 
+any rectangles where two edges intersect from either end at the same axis, which my code hinges on. If 
 there are two edges that pass into your rectangle that are more than 1 space apart, then they create a gap in the 
 rectangle so it also can be skipped.
 
