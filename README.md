@@ -1,8 +1,16 @@
 # Advent Of Code 2025
 
-Practicing some rust. Didn't bother with the most optimal solutions, just implemented whatever came to mind.
+Practicing some rust. Not necessarily the most optimal solutions, just implemented whatever came to mind.
 
 ## Solutions
+
+### Day 11
+
+Part 1 is simple DFS. Part 2 is also DFS (with memoization or it takes forever to run). There are 2 possible paths you can take for part 2: 
+`svr -> dac -> fft -> out` or `svr -> fft -> dac -> out`. So, we have six legs total. We can run DFS on each of the six legs, and multiply
+the results together for each path, then add them for the final result. For the first path, the total number of valid paths is 
+`dfs(svr, dac) * dfs(dac, fft) * dfs(fft, out)`, with the caveat that `dfs(svr, out)` does not visit `fft` and `dfs(fft, out)` does not visit `dac`. 
+The same caveat applies to the second path, but flipped. 
 
 ### Day 10
 
