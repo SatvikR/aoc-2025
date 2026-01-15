@@ -4,6 +4,11 @@ Practicing some rust. Not necessarily the most optimal solutions, just implement
 
 ## Solutions
 
+### Day 12
+
+A real solution would likely involve some sort of SAT solver. Luckily, the every input region is either trivially too large
+or trivially too small so this ends up being the easiest day of them all.
+
 ### Day 11
 
 Part 1 is simple DFS. Part 2 is also DFS (with memoization or it takes forever to run). There are 2 possible paths you can take for part 2: 
